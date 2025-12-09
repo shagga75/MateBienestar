@@ -6,9 +6,16 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
+  maxWidth?: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
+export const Modal: React.FC<ModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  children, 
+  title, 
+  maxWidth = 'max-w-lg' 
+}) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -29,11 +36,11 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }
         onClick={onClose}
       />
       
-      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl transform transition-all animate-fade-in-up max-h-[90vh] overflow-y-auto">
-        <div className="sticky top-0 right-0 z-10 flex justify-end p-4 pb-0">
+      <div className={`relative w-full ${maxWidth} bg-white rounded-2xl shadow-2xl transform transition-all animate-fade-in-up max-h-[90vh] overflow-y-auto`}>
+        <div className="sticky top-0 right-0 z-10 flex justify-end p-4 pb-0 bg-white/90 backdrop-blur-sm">
           <button 
             onClick={onClose}
-            className="p-2 bg-white/80 rounded-full hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-800"
+            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-800"
           >
             <X size={24} />
           </button>

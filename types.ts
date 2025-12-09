@@ -20,3 +20,15 @@ export interface Testimonial {
   text: string;
   focus: 'Energía' | 'Digestión' | 'Peso';
 }
+
+export interface Lead {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  city: string;
+  country: string;
+  message: string;
+  date: string;
+  status: 'new' | 'contacted';
+}

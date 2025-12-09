@@ -9,12 +9,17 @@ import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { Modal } from './components/Modal';
 import { AmbassadorForm } from './components/AmbassadorForm';
+import { AdminDashboard } from './components/AdminDashboard';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  
+  const openAdmin = () => setIsAdminOpen(true);
+  const closeAdmin = () => setIsAdminOpen(false);
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-brand-sand">
@@ -27,14 +32,24 @@ const App: React.FC = () => {
         <Testimonials />
         <FinalCTA onOpenAmbassadorModal={openModal} />
       </main>
-      <Footer />
+      <Footer onOpenAdmin={openAdmin} />
 
+      {/* Modal para Formulario de Usuario */}
       <Modal 
         isOpen={isModalOpen} 
         onClose={closeModal}
         title="Únete al Equipo"
       >
         <AmbassadorForm onCancel={closeModal} />
+      </Modal>
+
+      {/* Modal para Admin Dashboard */}
+      <Modal
+        isOpen={isAdminOpen}
+        onClose={closeAdmin}
+        maxWidth="max-w-4xl"
+      >
+        <AdminDashboard />
       </Modal>
     </div>
   );
