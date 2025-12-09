@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://shagga75.github.io/MateBienestar/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

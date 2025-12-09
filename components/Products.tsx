@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import { Check, Leaf, Zap, Droplets } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Product } from '../types';
 
 const productData: Product[] = [
@@ -60,7 +60,7 @@ export const Products: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {productData.map((product, index) => (
+          {productData.map((product) => (
             <div key={product.id} className="group bg-brand-sand/30 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col border border-stone-100">
               <div className="relative h-64 overflow-hidden">
                  <div className="absolute inset-0 bg-brand-green/5 group-hover:bg-transparent transition-colors z-10"></div>

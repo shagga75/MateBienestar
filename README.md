@@ -58,12 +58,14 @@ El sistema incluye un "Backoffice" simulado para ver los leads que se registran 
 
 ## ☁️ Despliegue en Vercel
 
-Este proyecto está configurado para desplegarse automáticamente en Vercel:
+Este proyecto está optimizado para Vercel.
 
-1. Sube este código a tu GitHub.
-2. Ve a [Vercel](https://vercel.com) e importa el repositorio.
-3. Vercel detectará automáticamente `Vite` y desplegará el sitio en segundos.
-4. ¡Listo!
+1. Sube este código a tu repositorio de GitHub.
+2. Ve a [Vercel](https://vercel.com) e inicia sesión.
+3. Haz clic en "Add New..." -> "Project".
+4. Importa el repositorio de `mate-bienestar`.
+5. Vercel detectará automáticamente que es un proyecto Vite.
+6. Haz clic en **Deploy**.
 
 ## 📄 Licencia
 
